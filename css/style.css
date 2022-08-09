@@ -24,8 +24,10 @@ a {
 }
 
 .container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
+    /* padding: 0 30px; */
 }
 
 
@@ -48,10 +50,6 @@ a {
     
 }
 
-.header__top-img {
-    display: flex;
-    align-items: center;
-}
 
 .header__top-contacts {
     font-family: "FreeSetDemiC";
@@ -62,6 +60,19 @@ a {
 .header__top-phone {
     margin-left: 5px;
     font-size: 16px;
+    padding-left: 21px;
+    position: relative;
+}
+
+.header__top-phone::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    background: no-repeat url('./images/header__top-phone.svg');
+    width: 16px;
+    height: 16px;
+
 }
 
 .header__top-social {
@@ -133,6 +144,10 @@ a {
     color: #fff;
 }
 
+.header__bottom-content-img {
+    margin-right: 30px;
+}
+
 .header__bottom-menu {
     display: flex;
     align-items: center;
@@ -140,15 +155,21 @@ a {
     font-family: "FreeSetDemiC";
 }
 
+.header__bottom-menu-burger {
+    display: none;
+}
 
+.header__bottom-menu-item a {
+    position: relative;
+}
 
 .header__bottom-menu-item {
     margin-right: 30px;
     font-size: 16px;
-    position: relative;
 }
 
-.header__bottom-menu-item::after {
+
+.header__bottom-menu-item a::after {
     content: '';
     position: absolute;
     width: 2px;
@@ -304,7 +325,7 @@ a {
     font-weight: 600;
 }
 
-.products__content-arrow {
+.main__btn-arrow {
     margin-left: 10px;
 }
 
@@ -319,16 +340,18 @@ a {
 .products__blocks {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
+
 .products__block {
-    width: 262px;
+    width: 263px;
     height: 433px;
     background-color: #fff;
     border-radius: 10px;
-    margin-right: 50px;
     margin-bottom: 50px;
 }
+
 
 .products__block:nth-child(4n) {
     margin-right: 0;
@@ -390,7 +413,6 @@ a {
     font-size: 16px;
     color: #BD0202;
     font-family: "FreeSetC";
-    cursor: pointer;
 }
 
 
@@ -444,19 +466,15 @@ a {
     border-radius: 5px;
     height: 35px;
     font-family: "FreeSetC";
-
-}
-
-.main__btn-link {
     color: #232323;
-    margin-right: 10px;
+    font-size: 14px;
+    white-space: nowrap;
 }
+
+
 
 .about__onega-content-right {
-    display: flex;
-    justify-content: space-between;
     width: 887px;
-    flex-wrap: wrap;
 }
 
 .about__onega-content-right-header {
@@ -467,7 +485,7 @@ a {
 
 .about__onega-content-right-news {
     font-size: 34px;
-    font-weight: 600px;
+    font-weight: 600;
     font-family: "FreeSetDemiC";
 }
 
@@ -476,6 +494,7 @@ a {
     justify-content: space-between;
     margin-top: 53px;
     width: 100%;
+    gap: 20px;
 }
 
 .about__onega-block {
@@ -657,9 +676,10 @@ a {
 
 .footer__top-content-links-block-item {
     font-size: 16px;
-    line-height: 240%;
+    margin-bottom: 20px;
     font-family: "FreeSetC";
 }
+
 
 .footer__bottom {
     display: flex;
@@ -677,3 +697,290 @@ a {
 .footer__bottom-title a {
     text-decoration: underline;
 }
+
+@media (max-width: 1200px) {
+
+    .container {
+        padding: 0 10px;
+    }
+    
+    .header__top-social {
+        display: none;
+    }
+
+    .header__top-languages {
+        display: none;
+    }
+
+    .header__bottom-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 474px;
+    }
+
+
+    .services {
+        padding-bottom: 50px;
+    }
+
+    .services__blocks {
+        justify-content: center;
+    }
+
+    .services__content {
+        flex-direction: column;
+    }
+
+    .services__content-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .services__content .services__info {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .services__info-descr {
+        text-align: center;
+    }
+
+    .services__blocks {
+        margin-top: 33px;
+    }
+
+    .services__block {
+        width: 262px;
+    }
+
+    .services__content-first {
+        margin-top: 0;
+    }
+
+
+    .about__onega-blocks {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer__top-content {
+        flex-direction: column;
+    }
+
+    .footer__top-content-onega {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    
+    .footer__top-content-right {
+        margin: 0 auto;
+    }
+
+}
+
+
+@media (max-width: 1023px) {
+    .services__blocks {
+        overflow-x: auto;
+    }
+
+
+    .products__blocks {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .about__onega-blocks {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+
+    .about__onega-content {
+        flex-direction: column;
+    }
+
+    .about__onega-content-left {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .about__onega-content-right {
+        width: 100%;
+    }
+
+    .about__onega-block {
+        min-width: 262px;
+    }
+
+    .about__onega-content-left-title {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .about__onega-content-left-descr {
+        font-size: 16px;
+        margin-bottom: 17px;
+    }
+
+
+    .footer__top-content-info {
+        margin-top: 0;
+    }
+
+
+    .footer__top-content-onega-phone {
+        font-size: 15px;
+    }
+
+    .footer__top-content-right {
+        gap: 20px;
+    }
+
+    .footer__bottom-title {
+        text-align: center;
+    }
+
+    .footer__top-content-right {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .footer__top-content-links {
+        width: 262px;
+    }
+
+    .footer__top-content-links-blocks {
+        flex-direction: column;
+    }
+    
+    .footer__top-content-links-block {
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .header__top-phone {
+        font-size: 16px;
+    }
+
+    .header__top-phone::after {
+        top: 2px;
+    }
+
+    .header__top-menu {
+        display: none;
+    }
+
+    .header__bottom-menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        width: 280px;
+    }
+
+    .header__bottom-menu-item {
+        display: none;
+    }
+
+    .banner {
+        height: 375px;
+        padding-top: 183px;
+        align-items: flex-start;
+    }
+
+    .banner__title {
+        font-size: 34px;
+        width: 314px;
+    }
+
+    .header__bottom-menu-burger {
+        display: flex;
+        align-items: center;
+        background: transparent;
+        border: none;
+        color: #fff;
+    }
+
+    .header__bottom-menu-burger img {
+        width: 20px;
+        height: 12px;
+        margin-left: 10px;
+    }
+
+
+    .header__top-menu {
+        display: none;
+    }
+    
+    .services__info-title {
+        font-size: 28px;
+    }
+
+    .services__info-descr {
+        font-size: 16px;
+    }
+
+    .products__content-title {
+        font-size: 24px;
+    }
+
+    .products__block-content-title {
+        font-size: 24px;
+    }
+
+    .about__onega-content-left {
+        margin-bottom: 33px;
+    }
+    
+    .about__onega-content-left-title {
+        font-size: 28px;
+    }
+
+    .about__onega-content-right-news {
+        font-size: 24px;
+    }
+    
+    .about__onega-block-descr {
+        font-size: 14px;
+    }
+
+    .footer__top-content-info-title {
+        font-size: 24px;
+    }
+
+    .footer__top-content-onega-phone {
+        font-size: 14px;
+    }
+
+    .footer__top-content-onega-mail {
+        font-size: 14px;
+    }
+
+    .footer__top-content-info-socials {
+        font-size: 14px;
+    }
+
+    .footer__top-content-links-title {
+        font-size: 24px;
+    }
+}
+
+
+
+
